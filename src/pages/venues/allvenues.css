@@ -1,0 +1,125 @@
+/* Color palette */
+:root {
+    --PrimaryColor: #FFA101;
+    --SecondaryColor: #FAE6B1;
+    --ThirdColor: #B3DEE5;
+    --DarkColor: #31525B;
+    --HoverColor: #FFA101;
+    --whiteColor: #FCFCFC;
+    --blackColor: #272727;
+    --greyBg: #F8F7F7;
+    --greyText: #D9D9D9;
+    --inputColor: #F5F5F5;
+  }
+
+.main-padding {
+    padding-top: 1rem;
+}
+
+  /* Filter BUTTON */
+  .btn-filter {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    background-color: #FFF;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: 2px solid var(--PrimaryColor);
+
+  }
+
+  .btn-filter:hover {
+    background-color: var(--SecondaryColor);
+  }
+
+  .btn-filter-icon {
+    height: 25px;
+    margin-right: 15px;
+  }
+
+  .btn-filter-span {
+    font-size: 16px;
+    font-weight: bold;
+    color: black; 
+  }
+
+/* Heart favorites*/
+
+.favorite {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: none;
+}
+
+.favorite svg {
+  fill: var(--HoverColor);
+  width: 24px;
+  height: 24px;
+}
+
+
+/* Facilities*/
+  .rating-star {
+    font-size: 3em;
+    color: var(--PrimaryColor);
+  }
+  
+  .facilities {
+    justify-content: space-around;
+  } 
+
+  .venue-title {
+    text-decoration: none;
+    color: var(--PrimaryColor);
+  }
+
+  .venue-title:hover {
+    color: var(--ThirdColor);
+  }
+
+  .venues-faci {
+    padding: 0.1rem 1.4rem 0.1rem 1.4rem;
+    background-color: var(--SecondaryColor);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .venues-faci p {
+    margin-left: 10px;
+    margin-bottom: 0.5rem;
+  }
+
+  .venues-faci .venues-icon {
+    color: var(--PrimaryColor);
+    font-size: 1.2rem;
+  }
+
+  /* Facilities */
+  .meta-box {
+    width: 30px;
+    margin-right: 20px;
+    height: 30px;
+    border: 1px solid var(--PrimaryColor);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .meta-icon {
+    font-size: 0.7em;
+    color: var(--PrimaryColor);
+  }
+  
+  .meta-text {
+    font-size: 0.3em;
+    font-weight: bold;
+    color: var(--PrimaryColor);
+  }

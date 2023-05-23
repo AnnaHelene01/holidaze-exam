@@ -1,0 +1,32 @@
+/* Color palette */
+:root {
+    --PrimaryColor: #FFA101;
+    --SecondaryColor: #FAE6B1;
+    --ThirdColor: #B3DEE5;
+    --DarkColor: #31525B;
+    --HoverColor: #FFA101;
+    --whiteColor: #FCFCFC;
+    --blackColor: #272727;
+    --greyBg: #F8F7F7;
+    --greyText: #D9D9D9;
+    --inputColor: #F5F5F5;
+  }
+
+.design-component {
+    background-color: var(--SecondaryColor);
+    width: 100%;
+    padding: 2rem;
+}
+
+.rounded-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    line-height: 90px;
+    text-align: center;
+    display: inline-block;
+    background: var(--whiteColor);
+    color: var(--PrimaryColor);
+    font-size: 40px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,114 @@
+/* Color palette */
+:root {
+    --PrimaryColor: #FFA101;
+    --SecondaryColor: #FAE6B1;
+    --ThirdColor: #B3DEE5;
+    --DarkColor: #31525B;
+    --HoverColor: #FFA101;
+    --whiteColor: #FCFCFC;
+    --blackColor: #272727;
+    --greyBg: #F8F7F7;
+    --greyText: #D9D9D9;
+    --inputColor: #F5F5F5;
+  }
+
+/* User portfolio / avatar  */
+
+.avatar-img {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+}  
+
+.user-container h5 {
+    color: var(--PrimaryColor);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.update-avatar {
+    flex-direction: column;
+    max-width: 15rem;
+}
+
+.user-container input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.user-container button {
+    background-color: var(--PrimaryColor);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 3px;
+}
+
+.button-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .button-container .profile-btn {
+    flex-basis: 50%;
+    padding: 0.5rem;
+    margin: -12px;
+    border: 1px solid black;
+    background-color: var(--ThirdColor);
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .button-container .profile-btn:hover {
+    background-color: var(--whiteColor);
+    color: var(--ThirdColor);
+  }
+  
+  .button-container .profile-btn.active {
+    background-color: var(--ThirdColor);
+    color: var(--PrimaryColor);
+  }
+
+/* TAB section */
+.custom-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.custom-tabs .nav-link {
+    color: var(--PrimaryColor);
+}
+
+.custom-tabs .nav-link:hover {
+    color: var(--DarkColor);
+}
+
+.custom-tabs .nav-tabs {
+    border-bottom-color: var(--SecondaryColor);
+}
+
+.tab-underline.active {
+    border-bottom-color: var(--PrimaryColor);
+  }
+
+.trash-btn {
+  background-color: var(--PrimaryColor);
+  border: 2px solid var(--PrimaryColor);
+  position: absolute;
+  color: white;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.trash-btn:hover {
+  background-color: var(--SecondaryColor);
+}

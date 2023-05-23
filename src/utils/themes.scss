@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Playfair+Display&display=swap');
+
+$primary: #FFA101;
+$secondary: #FAE6B1;
+$success: #31525B;
+$info: #B3DEE5;
+
+
+/* Color palette */
+:root {
+    --PrimaryColor: #FFA101;
+    --SecondaryColor: #FAE6B1;
+    --ThirdColor: #B3DEE5;
+    --DarkColor: #31525B;
+    --HoverColor: #FFA101;
+    --whiteColor: #FCFCFC;
+    --blackColor: #272727;
+    --greyBg: #F8F7F7;
+    --greyText: #D9D9D9;
+    --inputColor: #F5F5F5;
+  }
+
+/* Theme styling */
+h1, h2, h3, h4, h5 {
+    font-family: 'Cardo', serif;
+}
+
+p {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.primaryBg {
+    background-color: var(--SecondaryColor);
+    width: 100%;
+}
+
+/* Header design */
+.headerBox {
+    position: relative;
+    width: 100px;
+
+}
+
+.mainHeadOne {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    font-weight: bold;
+}
+
+.mainHeadTwo {
+    font-weight: bold;
+    position: absolute;
+    left: 40%;
+}
+
+
+.primaryHeader {
+    color: var(--PrimaryColor);
+}
+
+
+//Fix navbar (bootstrap overwrites my vanilla code
+.logoDiv a {
+    text-decoration: none;
+}
+
+.logoDiv a h1 {
+    font-size: 1.6rem;
+}
+
+.navBar ul {
+    margin-bottom: 0;
+}
+
+.navItem a {
+    text-decoration: none;
+}
+
+button a {
+    color: var(--whiteColor);
+    text-decoration: none;
+}

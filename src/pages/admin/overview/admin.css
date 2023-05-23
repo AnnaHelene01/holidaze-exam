@@ -1,0 +1,130 @@
+/* Color palette */
+:root {
+    --PrimaryColor: #FFA101;
+    --SecondaryColor: #FAE6B1;
+    --ThirdColor: #B3DEE5;
+    --DarkColor: #31525B;
+    --HoverColor: #FFA101;
+    --whiteColor: #FCFCFC;
+    --blackColor: #272727;
+    --greyBg: #F8F7F7;
+    --greyText: #D9D9D9;
+    --inputColor: #F5F5F5;
+  }
+
+
+  /* Admin header design */
+.adminHeader {
+    position: relative;
+    width: 100px;
+    padding-bottom: 12rem;
+
+}
+
+.adminHeadOne {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    font-weight: bold;
+}
+
+.adminHeadTwo {
+    font-weight: bold;
+    position: absolute;
+    left: 40%;
+}
+
+  .adminPage{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+    background-color: var(--greyBg);
+}
+
+.page{
+	flex-basis: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: margin-left 1s;
+    background-color: var(--greyBg);
+}
+
+/*DENNE FUNKER IKKE ENDA LOLLOLOL */
+.content-wrapper {
+    z-index: 1;
+}
+
+.admin-card {
+    padding-right: 3rem;
+}
+
+.bookings-img {
+    width: 20%;
+}
+
+
+/* Venues design */
+.venue-box {
+  position: relative;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-right: 2%;
+}
+
+.venue-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.venue-box-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.venue-box-overlay h5 {
+  margin: 5px 0px 0px;
+  width: calc(100% - 200px); /* subtract the width of the buttons */
+}
+
+.btn-group {
+  display: flex;
+}
+
+.edit-btn {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid var(--PrimaryColor);
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.edit-btn:hover {
+  background-color: var(--PrimaryColor);
+  color: #000;
+}
+
+.venue-box-overlay button:last-child {
+  margin-left: 10px;
+}
+
+
+@media only screen and (max-width: 768px){
+	.page-with-navbar{
+		width: 100%;
+		margin-left: 0;
+	}
+}
+

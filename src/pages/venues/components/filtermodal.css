@@ -1,0 +1,43 @@
+/* Color palette */
+:root {
+    --PrimaryColor: #FFA101;
+    --SecondaryColor: #FAE6B1;
+    --ThirdColor: #B3DEE5;
+    --DarkColor: #31525B;
+    --HoverColor: #FFA101;
+    --whiteColor: #FCFCFC;
+    --blackColor: #272727;
+    --greyBg: #F8F7F7;
+    --greyText: #D9D9D9;
+    --inputColor: #F5F5F5;
+  }
+
+.venue-square {
+    width: 80px;
+    margin-right: 20px;
+    height: 80px;
+    border: 2px solid var(--PrimaryColor);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .venue-square:hover {
+    background-color: var(--SecondaryColor);
+  }
+  
+  .icon-venue {
+    font-size: 1.5em;
+    color: var(--PrimaryColor);
+  }
+  
+  .text-venue {
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    background-color: var(--PrimaryColor);
+  }

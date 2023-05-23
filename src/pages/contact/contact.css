@@ -1,0 +1,123 @@
+.contact {
+    height: 70vh;
+    background: linear-gradient(rgba(33, 33, 33, 0.552), rgba(33, 33, 33, 0.552)), url("../../assets/contact.avif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+  }
+  .contact .secoContainer {
+    position: absolute;
+    /* bottom: -35%; */
+    width: 80%;
+    left: 50%;
+    justify-content: center;
+    display: grid;
+    transform: translate(-50%);
+    gap: 3rem;
+  }
+  .contact .secoContainer .contactCard {
+    background-color: var(--whiteColor);
+    padding: 0.5rem;
+    box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.45);
+    border-radius: 1rem;
+  }
+  .contact .secoContainer .contactCard .contactBody {
+    padding: 1rem;
+    text-align: center;
+  }
+  .contact .secoContainer .contactCard .contactBody h4 {
+    color: var(--blackColor);
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .contact .secoContainer .contactCard .btn {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 0.6rem;
+    color: var(--whiteColor);
+    font-weight: 600;
+    gap: 0.5rem;
+  }
+  .contact .secContainer {
+    margin-bottom: 6rem;
+  }
+  .contact .secContainer .homeText {
+    margin: 1rem;
+  }
+  .contact .secContainer .homeText .title {
+    color: var(--whiteColor);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.5rem;
+    text-align: center;
+  }
+  .contact .secContainer .homeText .subTitle {
+    color: var(--whiteColor);
+    opacity: 0.9;
+    font-size: 13px;
+    font-weight: 300;
+    padding: 1rem 0;
+    max-width: 70%;
+    text-align: center;
+    margin: auto;
+    text-align: center;
+  }
+  .contact .secContainer .homeText .contactOpening {
+    margin: auto;
+    max-width: 200px;
+  }
+  .contact .secContainer .homeText .contactOpening .openTitle {
+    color: var(--whiteColor);
+  }
+  
+
+  
+  .contact-form h2 {
+    text-align: center;
+  }
+  
+  @media screen and (min-width: 480px) {
+    .contact .secContainer .secoContainer {
+      width: 90%;
+      grid-template-columns: auto;
+    }
+  }
+  @media screen and (min-width: 556px) {
+    .contact .secContainer .homeText .title {
+      font-size: 2.5rem;
+    }
+    .contact .secContainer .homeText .subTitle {
+      font-size: 18px;
+    }
+  }
+  @media screen and (min-width: 720px) {
+    .contact .secContainer .secoContainer {
+      bottom: -30%;
+      grid-template-columns: auto auto auto;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .contact .secContainer .homeText {
+      padding: 1rem 10rem;
+    }
+    .contact .secContainer .homeText .title {
+      font-size: 3.5rem;
+      margin: auto;
+      line-height: 4rem;
+    }
+    .contact .secContainer .homeText .subTitle {
+      font-size: 20px;
+    }
+    .contact .secContainer .secoContainer {
+      width: 70%;
+    }
+  }
+  
+  

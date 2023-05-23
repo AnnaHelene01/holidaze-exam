@@ -1,0 +1,142 @@
+  
+  .home {
+    height: 70vh;
+    background: linear-gradient(rgba(33, 33, 33, 0.552), rgba(33, 33, 33, 0.552)), url("../../assets/example.avif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+  }
+  
+  .secContainer .homeText {
+    text-align: center;
+  }
+
+  .homeText .title {
+    color: var(--whiteColor);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.5rem;
+  }
+  
+  .homeText .subTitle {
+    color: var(--whiteColor);
+    opacity: 0.9;
+    font-size: 13px;
+    font-weight: 300;
+    padding: 1rem 0;
+    max-width: 70%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .home .secContainer .homeText .btn {
+    padding: 0.6rem 1.5rem;
+  }
+
+  .home .secContainer .homeCard {
+    width: 80%;
+    border-radius: 1rem;
+    padding: 2rem;
+    background: var(--SecondaryColor);
+    position: absolute;
+    justify-content: center;
+    gap: 1rem;
+    bottom: -35%;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.45);
+  }
+
+  .home .locationDiv, 
+  .home .priceDiv {
+    width: 100%;
+  }
+   .locationDiv label, 
+   .priceDiv label {
+    display: block;
+    color: var(--textColor);
+    font-weight: 500;
+    font-size: 13px;
+    padding-bottom: 0.4rem;
+  }
+
+  .homeCard .locationDiv input, 
+  .homeCard .distDiv input, .home .secContainer .homeCard .priceDiv input {
+    width: 100%;
+    background: var(--inputColor);
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .homeCard .locationDiv input::placeholder, 
+  .homeCard .distDiv input::placeholder, .home .secContainer .homeCard .priceDiv input::placeholder {
+    font-size: 13px;
+    opacity: 0.5;
+    font-weight: 400;
+  }
+
+  .homeCard .locationDiv input:focus, .home .secContainer .homeCard .distDiv input:focus, 
+  .homeCard .priceDiv input:focus {
+    outline: none;
+  }
+
+  .homeCard .btn {
+    width: 100%;
+    padding: 0.6rem 1.5rem;
+    color: var(--whiteColor);
+    font-weight: 600;
+  }
+  
+  @media screen and (min-width: 480px) {
+    .home .secContainer .homeCard {
+      bottom: -18%;
+      width: 90%;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .home .secContainer .homeCard .btn {
+      transform: translateY(15px);
+    }
+  }
+  @media screen and (min-width: 556px) {
+    .home .secContainer .homeText .title {
+      font-size: 2.5rem;
+    }
+    .home .secContainer .homeText .subTitle {
+      font-size: 18px;
+    }
+  }
+  @media screen and (min-width: 720px) {
+    .home .secContainer .homeCard {
+      bottom: -10%;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .home .secContainer .homeCard .btn {
+      transform: translateY(15px);
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .home .secContainer .homeText {
+      padding: 1rem 10rem;
+    }
+    .home .secContainer .homeText .title {
+      font-size: 3.5rem;
+      margin: auto;
+      line-height: 4rem;
+    }
+    .home .secContainer .homeText .subTitle {
+      font-size: 20px;
+    }
+    .home .secContainer .homeCard {
+      width: 70%;
+    }
+  }
+  
+  

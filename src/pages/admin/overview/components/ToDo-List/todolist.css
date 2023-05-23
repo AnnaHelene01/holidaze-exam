@@ -1,0 +1,49 @@
+/* Color palette */
+:root {
+    --PrimaryColor: #FFA101;
+    --SecondaryColor: #FAE6B1;
+    --ThirdColor: #B3DEE5;
+    --DarkColor: #31525B;
+    --HoverColor: #FFA101;
+    --whiteColor: #FCFCFC;
+    --blackColor: #272727;
+    --greyBg: #F8F7F7;
+    --greyText: #D9D9D9;
+    --inputColor: #F5F5F5;
+  }   
+  
+  .todo-input {
+    outline: none;
+    background: none;
+    border: 1px solid var(--PrimaryColor);
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .todo-btn {
+    background: var(--PrimaryColor);
+    color: #fff;
+    border: none;
+    padding: 0.55rem;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1rem;
+    
+  }
+  
+  .todo-element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--SecondaryColor);
+    color: black;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  
+ul {
+    margin-left: 0;
+}

@@ -1,0 +1,116 @@
+/* Color palette */
+:root {
+    --PrimaryColor: #FFA101;
+    --SecondaryColor: #FAE6B1;
+    --ThirdColor: #B3DEE5;
+    --DarkColor: #31525B;
+    --HoverColor: #FFA101;
+    --whiteColor: #FCFCFC;
+    --blackColor: #272727;
+    --greyBg: #F8F7F7;
+    --greyText: #D9D9D9;
+    --inputColor: #F5F5F5;
+  }
+
+.primary {
+  color: var(--PrimaryColor);
+  cursor: pointer;
+}
+
+.primary:hover {
+  color: #31525B;
+}
+  
+.venue-container {
+    padding-top: 5rem;
+}
+
+.venue-container p {
+    font-size: 1rem;
+}
+
+.rating-star {
+    font-size: 1.6rem;
+}
+
+.max-guests {
+display: flex;
+align-items: center;
+}
+
+.max-guests p {
+margin-left: 10px;
+margin-bottom: 0.5rem;
+}
+
+.max-guests .max-guests-icon {
+color: var(--PrimaryColor);
+font-size: 1.4rem;
+}
+
+.btn-booknow {
+    padding: 1rem 3rem;
+    background: var(--DarkColor);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.btn-booknow:hover {
+    background-color: var(--ThirdColor);
+    color: black;
+}
+
+
+
+.square {
+    width: 80px;
+    margin-right: 20px;
+    height: 80px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-facility {
+    font-size: 2em;
+  }
+  
+  .text {
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+
+  /* OWNER */
+  .owner-avatar {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+  }
+
+  .owner-info {
+    padding-left: 10px;
+  }
+
+  /* Book Now modal*/
+  .booknow-btn {
+    color: #fff;
+    background-color: var(--PrimaryColor);
+    border: 1px solid var(--PrimaryColor);
+    padding: 6.5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  .booknow-btn:hover {
+    background-color: var(--DarkColor);
+    border: 1px solid var(--DarkColor);
+  }

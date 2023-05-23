@@ -1,0 +1,153 @@
+/* Color palette */
+:root {
+    --PrimaryColor: #FFA101;
+    --SecondaryColor: #FAE6B1;
+    --ThirdColor: #B3DEE5;
+    --DarkColor: #31525B;
+    --HoverColor: #FFA101;
+    --whiteColor: #FCFCFC;
+    --blackColor: #272727;
+    --greyBg: #F8F7F7;
+    --greyText: #D9D9D9;
+    --inputColor: #F5F5F5;
+  }
+  
+
+ nav{
+	position: fixed;
+	top:0;
+	left:0;
+	display:flex;
+	flex-direction:column;
+	justify-content: space-between;
+	width:15%;
+	height: 100%;
+	background-color: var(--DarkColor);
+	padding:2rem 1rem 1rem 1rem;
+	transition: transform 1s;
+	z-index: 1;
+}
+
+.adminbar{
+	transform: translateX(-100%);
+}
+
+.admin-btn{
+	position: absolute;
+	z-index: 1;
+	transform: translateX(38px);
+	top: 20px;
+	right: 0;
+	width:40px;
+	height: 60px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--DarkColor);
+	outline: none;
+	border: none;
+	font-size: 1rem;
+	padding: 5px 10px;
+	cursor: pointer;
+	color: #fff;
+}
+
+.adminlogo{
+	width: 100px;
+	margin: auto;
+	background:transparent;
+    text-decoration: none;
+}
+
+.admin-icon {
+    font-size: 25px;
+    color: var(--PrimaryColor);
+}
+
+.adminlogo h1{
+    font-size: 24px;
+    color: var(--whiteColor);
+}
+
+.admin-link{
+	display: flex;
+	align-items: center;
+	color: #fff;
+	text-decoration: none;
+	padding: 10px 1rem;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+
+.admin-link:hover{
+	background-color: var(--ThirdColor);
+	color: #4e4e4e;
+}
+
+.admin-link-active{
+	background-color: var(--ThirdColor);
+}
+
+.admin-link span{
+	margin-left: 10px;
+}
+
+.admin-top{
+	margin-top: 10rem;
+}
+
+
+.mobile-nav{
+	position: fixed;
+	z-index: 1;
+	background-color: var(--DarkColor);
+	width: 100%;
+	height:50px;
+	display: none;
+}
+
+.mobile-nav-btn{
+	color: #fff;
+	background: transparent;
+	outline: none;
+	border: none;
+	margin: 0 10px;
+}
+
+@media only screen and (max-width: 1150px){
+	nav{
+		width: 20%;
+		padding: 10px;
+	}
+}
+
+@media only screen and (max-width: 768px){
+	nav{
+		width: 40%;
+		padding: 10px;
+	}
+}
+
+@media only screen and (max-width: 450px){
+	.mobile-nav{
+		display: flex;
+		align-items: center;
+	}
+	nav{
+		width: 100%;
+		top: 38px;
+		min-height: auto;
+		justify-content: flex-start;
+	}
+
+	.admin-profile {
+		display: flex;
+		margin-top: 8rem;
+	}
+
+	.admin-btn{
+		display: none;
+	}
+}

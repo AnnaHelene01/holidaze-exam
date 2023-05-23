@@ -1,0 +1,52 @@
+/* Color palette */
+:root {
+    --PrimaryColor: #FFA101;
+    --SecondaryColor: #FAE6B1;
+    --ThirdColor: #B3DEE5;
+    --DarkColor: #31525B;
+    --HoverColor: #FFA101;
+    --whiteColor: #FCFCFC;
+    --blackColor: #272727;
+    --greyBg: #F8F7F7;
+    --greyText: #D9D9D9;
+    --inputColor: #F5F5F5;
+  }
+
+.venue-container {
+    justify-content: center;
+  }
+  
+  .venue-item {
+    position: relative;
+  }
+  
+  
+  .venue-item img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* make sure the image covers the entire container */
+  }
+  
+  .venue-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .venue-item:hover .venue-overlay {
+    opacity: 1;
+  }
+  
+
+
+  

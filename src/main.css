@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Playfair+Display&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .3s ease;
+}
+
+
+
+/* Color palette */
+:root {
+    --PrimaryColor: #FFA101;
+    --SecondaryColor: #FAE6B1;
+    --HoverColor: #FFA101;
+    --whiteColor: #FCFCFC;
+    --blackColor: #272727;
+    --greyBg: #F8F7F7;
+    --greyText: #D9D9D9;
+    --inputColor: #F5F5F5;
+}
+
+li {
+    list-style: none;
+}
+
+.icon{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.grid{
+    display: grid;
+    align-items: center;
+}
+
+
+.btn a{
+ color: var(--whiteColor);
+ font-weight: 500;
+}
+
+
+.btn:hover a{
+    color: var(--whiteColor);
+}
+
+.secIntro{
+    max-width: 70%;
+    text-align: center;
+    margin: 0 auto 2rem;
+    
+}
+.secIntro .secTitle{
+    color: var(--blackColor);
+    line-height: 1.5rem;
+    padding-bottom: .5rem;
+}
+
+.secIntro p{
+    font-size: 13px;
+    color: var(--textColor);
+    font-weight: 500;
+}
+
+
+img {
+width: 100%;
+height: auto;
+}
+
+input{
+    font-size: 100%;
+}
+
+/* Color when you select text */
+::selection{
+    background: var(--PrimaryColor);
+    color: var(--whiteColor);
+}
+
+/* Style scrollers */
+::-webkit-scrollbar{
+    width: 10px;
+    background: var(--greyBg);
+}
+::-webkit-scrollbar-thumb{
+    background: var(--PrimaryColor);
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 556px) {
+
+    .mainContent, .singlePost{
+        grid-template-columns: repeat(2,1fr);
+    } 
+}
+
+@media screen and (min-width: 884px) {
+    .mainContent{
+        grid-template-columns: repeat(3,1fr);
+    } 
+}
+
+
+@media screen and (min-width: 1024px) {
+    .container{
+        width: 75% !important;
+        margin: auto !important;
+    }
+
+    .section{
+        padding: 5rem 0 3rem;
+    }
+
+    .secIntro{
+        margin: 0 auto 3rem;
+        
+    }
+
+    .secIntro .secTitle{
+        line-height: 2rem;
+        padding-bottom: 1rem;
+        font-size: 2.2rem;
+    }
+
+    .secIntro p{
+        font-size: 15px;
+
+    }
+
+    
+}
+
+@media screen and (min-width: 2560px){
+    body{
+        zoom: 1.7;
+    }
+}
