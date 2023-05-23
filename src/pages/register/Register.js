@@ -22,7 +22,6 @@ const Register = () => {
                 <div className='headerBox'>
                     <h1 className='mainHeadOne primaryHeader'>Holidaze</h1>
                     <h1 className='mainHeadTwo mt-5'>Register</h1>
-                    <p>hei</p>
                 </div>  
                <RegisterForm />
             </Col>

@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import useApiPost from '../../../hooks/useApiPost';
 import { registerSchema } from '../../../utils/schema';
+import { Link } from 'react-router-dom';
 
 
 const RegisterForm = () => {
@@ -87,9 +88,9 @@ async function onFormSubmit(event) {
 
               <div className='flex'>
                   <p>Already have a user?</p>
-                  <a href="#" className="text-decoration-none">
+                  <Link to={'/login'}  className='text-decoration-none'>
                       <p style={{marginLeft: "5px", color: "#FFA101"}}>Login here!</p>
-                  </a> 
+                  </Link> 
               </div>
 
               <Button type="submit">

@@ -9,7 +9,7 @@ import { BsArrowRightShort } from 'react-icons/bs'
       {
       id:1,
       imgSrc: example2,
-      destTitle: 'Hotelroom',
+      destTitle: 'Wifi',
       location: 'Norway',
       grade: '5',
       },
@@ -17,7 +17,7 @@ import { BsArrowRightShort } from 'react-icons/bs'
       {
       id:2,
       imgSrc: example2,
-      destTitle: 'Cabin',
+      destTitle: 'Breakfast',
       location: 'Norway',
       grade: '5',
       },
@@ -25,7 +25,7 @@ import { BsArrowRightShort } from 'react-icons/bs'
       {
       id:3,
       imgSrc: example2,
-      destTitle: 'Apartment',
+      destTitle: 'Parking',
       location: 'Norway',
       grade: '5 ',  
       },
@@ -34,7 +34,7 @@ import { BsArrowRightShort } from 'react-icons/bs'
       {
       id:4,
       imgSrc: example2,
-      destTitle: 'Camping',
+      destTitle: 'Pets',
       location: 'Norway',
       grade: '5 ',
       }
@@ -50,10 +50,10 @@ import { BsArrowRightShort } from 'react-icons/bs'
   
           <div data-aos="fade-right" data-aos-duration="2500" className="textDiv">
           <h2 className='secTitle'>
-          Destinations
+          Facilities
           </h2>
           <p>
-          From the big cities, to extraordinary nature destinations. Check it out!
+          Holidaze have several facilities you can secure for your trip! Check it out!
           </p>
           </div>
         </div>

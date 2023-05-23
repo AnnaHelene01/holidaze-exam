@@ -3,7 +3,7 @@ import '../../overview/admin.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../components/venues.css'
 import { Button } from '../../../../components/styledComponents/mainStyles';
-import { MdOutlineEmojiFoodBeverage, MdPets } from 'react-icons/md';
+import { MdOutlineEmojiFoodBeverage, MdPanoramaWideAngle, MdPets } from 'react-icons/md';
 import { AiFillCar, AiOutlineWifi } from 'react-icons/ai';
 import { editSchema } from '../../../../utils/schema';
 import { useForm } from 'react-hook-form';
@@ -133,7 +133,6 @@ if (!editVenue.price) {
                         <Col sm="12" md="6" className='mb-4'>
                             <h5 className=''>PRICE RANGE</h5>
                             <div className='lg:w-50'>
-                                <Form.Group controlId="numberInput">
                                     <Form.Control 
                                         name="price" 
                                         type="number" 
@@ -144,14 +143,12 @@ if (!editVenue.price) {
                                         />
                                     <span>{errors.price?.message}</span>
                                 
-                                </Form.Group>
                                 
                             </div>            
                         </Col>
                         <Col sm="12" md="6">
                             <h5>MAX GUESTS</h5>
                             <div className='lg:w-50'>
-                                <Form.Group controlId="numberInput">
                                     <Form.Control 
                                         name="maxGuests" 
                                         type="number" 
@@ -161,8 +158,6 @@ if (!editVenue.price) {
                                         defaultValue={dataValues?.maxGuests}
                                         />
                                     <span>{errors.maxGuests?.message}</span>
-                                    <span>{errors.maxGuests?.value}</span>
-                                </Form.Group>
                             </div>
                         </Col>
 
@@ -274,10 +269,8 @@ if (!editVenue.price) {
                     />       
             </Col>
         </Row>
-
         </Container>
         </div>
-    
     </div>
     </>
   );

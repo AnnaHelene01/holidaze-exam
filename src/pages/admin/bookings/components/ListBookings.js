@@ -35,9 +35,6 @@ const ListBookings = ({ bookings, selectedVenue }) => {
             <td>{booking.guests}</td>
             <td>{new Date(booking.dateTo).toLocaleDateString('en-GB')}</td>
             <td>
-              <MDBBtn color='link' rounded size='sm'>
-                Delete
-              </MDBBtn>
             </td>
           </tr>
         ))

@@ -76,7 +76,7 @@ const Header = () => {
                     {venueManager === 'true' ? (
                       <li className='navItem'>
                         <Link to='/admin' className='navLink'>
-                          Admin{' '}
+                          Profile{' '}
                         </Link>
                       </li>
                     ) : (
