@@ -6,6 +6,7 @@ import { BookingsContext } from '../../../context/BookingContext';
 import { VenuesContext } from '../../../context/VenueContext';
 import { apiURL, holidazeProfiles } from '../../../utils/constants';
 import TodoList from './components/ToDo-List/TodoList';
+import { Link } from 'react-router-dom';
 
 const Admin = () => {
   const [adminVisible] = useState(false);
@@ -79,6 +80,7 @@ const Admin = () => {
         <div className="content-wrapper">
             <Row>
                 <Col className='mt-2'>
+                <Link to='/admin/bookings' className='text-decoration-none text-black'>
                     <Card>
                         <Card.Body>
                             <Card.Title>Total bookings</Card.Title>
@@ -87,10 +89,12 @@ const Admin = () => {
                                 <img src={admin} className='bookings-img'></img>    
                             </div>
                         </Card.Body>
-                    </Card>                
+                    </Card>   
+                </Link>             
                 </Col>
                 <Col className='mt-2'>
-                <Card>
+                <Link to={`/admin/venues/${profileName}`} className='text-decoration-none text-black'>
+                    <Card>
                         <Card.Body>
                             <Card.Title>Venues available</Card.Title>
                             <div className='d-flex'>
@@ -98,7 +102,8 @@ const Admin = () => {
                                 <img src={admin} className='bookings-img'></img>    
                             </div>
                         </Card.Body>
-                    </Card>                 
+                    </Card>   
+                </Link>              
                 </Col>
                 <Col className='mt-2'>
                 <Card>

@@ -14,6 +14,7 @@ const Header = () => {
   const location = useLocation();
   const accessToken = localStorage.getItem("accessToken");
   const venueManager = localStorage.getItem('venueManager');
+  const userName = JSON.parse(localStorage.getItem('username'));
 
   function logOut() {
     localStorage.removeItem('accessToken');
@@ -74,11 +75,18 @@ const Header = () => {
                 {accessToken ? (
                   <>
                     {venueManager === 'true' ? (
+                      <>
                       <li className='navItem'>
-                        <Link to='/admin' className='navLink'>
-                          Profile{' '}
-                        </Link>
+                          <Link to={`/admin/profile/${userName}`} className='navLink'>
+                            Profile{' '}
+                          </Link>
                       </li>
+                      <li className='navItem'>
+                          <Link to='/admin' className='navLink'>
+                            Admin{' '}
+                          </Link>
+                      </li>
+                      </>
                     ) : (
                       <li className='navItem'>
                         <Link to='/profile:name' className='navLink'>

@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import useApi from '../../../hooks/useApi';
 import { startOfToday } from 'date-fns';
 
-const BookNow = ({ handleClose }) => {
+const BookNow = ({ handleClose, handleClickClose }) => {
   const { venueId } = useParams();
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -17,10 +17,14 @@ const BookNow = ({ handleClose }) => {
   const [allbookings, setAllBookings] = useState([]);
   const [maxGuestError, setMaxGuestError] = useState('');
   const accessToken = JSON.parse(localStorage.getItem("accessToken"));
+  // const [showConfirmation, setShowConfirmation] = useState(false);
 
   const [allDisabled, setAllDisabled] = useState([])
   //Get bookings for Venue
   const { dataValues, isLoading, isError } = useApi(apiURL + holidazeVenues + '/' + venueId + "?_bookings=true");
+
+  // const handleCloseConfirmation = () => setShowConfirmation(false);
+  // const handleShowConfirmation = () => setShowConfirmation(true);
 
 
   const { bookings } = dataValues;
@@ -76,6 +80,8 @@ const BookNow = ({ handleClose }) => {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${accessToken}`,
+          
+
         },
         body: JSON.stringify({
           dateFrom: startDate,
@@ -83,6 +89,7 @@ const BookNow = ({ handleClose }) => {
           guests,
           venueId,
         }),
+        
       };
 
           // Get the maximum number of guests allowed for the venue
@@ -97,6 +104,7 @@ const BookNow = ({ handleClose }) => {
       const response = await fetch(`${apiURL}${holidazeBookings}`, options);
       const data = await response.json();
       handleClose();
+      // handleShowConfirmation();
       
     } catch (error) {
       console.error(error.message);
@@ -105,7 +113,7 @@ const BookNow = ({ handleClose }) => {
 
   return (
     <>
-      <Modal show={true} onHide={handleClose}>
+      <Modal show={true} onHide={handleClickClose}>
         <Modal.Header closeButton>
           <Modal.Title>Book Venue</Modal.Title>
         </Modal.Header>
@@ -171,6 +179,8 @@ const BookNow = ({ handleClose }) => {
           </button>
         </Modal.Footer>
       </Modal>
+
+      
     </>
   );
 };

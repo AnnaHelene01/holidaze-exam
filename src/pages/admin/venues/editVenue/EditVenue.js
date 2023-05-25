@@ -16,14 +16,16 @@ import PreviewVenue from './components/PreviewVenue';
 import useApiPut from '../../../../hooks/useApiPut';
 import EditMedia from './components/EditMedia';
 
-
 const EditVenue = () => {
   const [adminVisible] = useState(false);
   const { id } = useParams();
-  //console.log("ID:", id);
 
-  const { dataValues } = useApi(`${apiURL}${holidazeVenues}/${id}`);
-  //console.log("DataValues: ", dataValues);
+  const { dataValues, isError} = useApi(`${apiURL}${holidazeVenues}/${id}`);
+
+  if (isError) {
+    <h1>Im sorry, something went wrong!</h1>
+  }
+
   useEffect(() => {
     if (dataValues) {
       setValue('name', dataValues.name);
@@ -38,17 +40,16 @@ const EditVenue = () => {
         setValue('location.zip', dataValues?.location?.zip);
         setValue('location.country', dataValues?.location?.country);
       }
+    
     }
   }, [dataValues]);
   
-  
-
-  const [wifi, setWifi] = useState(dataValues?.meta?.wifi || false);
-  const [parking, setParking] = useState(dataValues?.meta?.parking || false);
-  const [breakfast, setBreakfast] = useState(dataValues?.meta?.breakfast || false);
-  const [pets, setPets] = useState(dataValues?.meta?.pets || false);
+    const [wifi, setWifi] = useState(dataValues?.meta?.wifi);
+    const [parking, setParking] = useState(dataValues?.meta?.parking);
+    const [breakfast, setBreakfast] = useState(dataValues?.meta?.breakfast);
+    const [pets, setPets] = useState(dataValues?.meta?.pets);  
     
-
+  
     // toggle function for each button
     const toggleWifi = () => {
         setWifi(!wifi);
@@ -66,7 +67,6 @@ const EditVenue = () => {
         setPets(!pets);
     };
 
-
   const {
     register,
     handleSubmit,
@@ -79,8 +79,7 @@ const EditVenue = () => {
 
   const watchedValues = watch(); // Get the current watched values
 
-
-  const { data, putData, isLoading, isError } = useApiPut();
+  const { data, putData, isLoading } = useApiPut();
   const accessToken = JSON.parse(localStorage.getItem("accessToken"));
 
   useEffect(() => {
@@ -104,7 +103,7 @@ const EditVenue = () => {
   
     try {
       console.log('fire ', editVenue);
-      await putData(`${apiURL}${holidazeVenues}/${id}`, editVenue);
+      //await putData(`${apiURL}${holidazeVenues}/${id}`, editVenue);
     } catch (error) {
       console.error("Edit venue failed: ", error);
     }
@@ -195,31 +194,33 @@ const EditVenue = () => {
                         className={wifi ? "meta-true" : "meta-false"}
                         onClick={toggleWifi}
                         type='button'
-                    >
-                         <AiOutlineWifi className='icon-venue' />
-                         <div className='text-venue'>Wifi</div>
-                    </button>
-                    <button
+                        >
+                        <AiOutlineWifi className='icon-venue' />
+                        <div className='text-venue'>Wifi</div>
+                        </button>
+                        <button
                         className={parking ? "meta-true" : "meta-false"}
                         onClick={toggleParking}
                         type='button'
-                    >
+                        >
                         <AiFillCar className='icon-venue'/>
                         <div className='text-venue'>Parking</div>
-                    </button>
+                        </button>
+                    </div>
+                    <div className='d-flex mt-2'>
                     <button
                         className={breakfast ? "meta-true" : "meta-false"}
                         onClick={toggleBreakfast}
                         type='button'
-                    >
+                        >
                         <MdOutlineEmojiFoodBeverage className='icon-venue'/>
                         <div className='text-venue'>Breakfast</div>
-                    </button>
-                    <button
+                        </button>
+                        <button
                         className={pets ? "meta-true" : "meta-false"}
                         onClick={togglePets}
                         type='button'
-                    >
+                        >
                         <MdPets  className='icon-venue'/>
                         <div className='text-venue'>Pets</div>
                     </button>

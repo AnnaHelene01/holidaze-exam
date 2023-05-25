@@ -64,7 +64,7 @@ const Venues = () => {
                             </button>
                         </div>
                 <Row className='bg-white p-2 p-md-4 p-lg-5 row-cols-1 row-cols-md-2 row-cols-lg-3'>
-                  {venues.map((venue) => (
+                  {venues?.map((venue) => (
                       <Col key={venue.id} className='mb-4'>
                         <VenueCard venue={venue} />
                       </Col>

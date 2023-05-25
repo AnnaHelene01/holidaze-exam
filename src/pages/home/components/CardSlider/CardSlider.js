@@ -50,10 +50,10 @@ import { BsArrowRightShort } from 'react-icons/bs'
   
           <div data-aos="fade-right" data-aos-duration="2500" className="textDiv">
           <h2 className='secTitle'>
-          Facilities
+          Popular Destinations
           </h2>
           <p>
-          Holidaze have several facilities you can secure for your trip! Check it out!
+          From the big cities, to extraordinary nature destinations. Check it out!
           </p>
           </div>
         </div>
@@ -77,10 +77,7 @@ import { BsArrowRightShort } from 'react-icons/bs'
                   {location}
                 </p>
   
-                <BsArrowRightShort 
-                  className='overlay-icon'
-                  
-                />
+                <BsArrowRightShort className='overlay-icon'/>
                
             </div>
             </div>

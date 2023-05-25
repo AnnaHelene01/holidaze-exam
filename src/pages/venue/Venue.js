@@ -11,6 +11,8 @@ import { BsFillPeopleFill } from 'react-icons/bs';
 import Owner from './components/Owner';
 import BookNow from './components/BookNow';
 import LoginToBook from './components/LoginToBook';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 const Venue = () => {
 
@@ -20,12 +22,42 @@ const Venue = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [show, setShow] = useState(false);
 
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  // console.log(showConfirmation)
+
+  const handleCloseConfirmation = () => {
+    setShowConfirmation(false)
+    window.location.href = "/"
+  };
+  // const handleShowConfirmation = () => setShowConfirmation(true);
+  
+
+
+
   const profileName = JSON.parse(localStorage.getItem('username'));
   //console.log("ProfileName: ", profileName);
  
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => {
+    setShow(false);
+       setShowConfirmation(!showConfirmation);
+      //  console.log(showConfirmation);
+  };
+
+  const handleClickClose = () => {
+    setShow(false);
+      //  console.log(showConfirmation);
+  };
+
+  const handleShow = () => {
+    setShow(true);
+    
+  
+  // console.log(showConfirmation)
+  };
+
+  
+  
 
   if(isLoading){
     return <h1 className='text-center'>I am Loading...</h1>
@@ -95,7 +127,7 @@ const Venue = () => {
                 ) : (
                   <LoginToBook />
                 )}  
-              {show && <BookNow handleClose={handleClose} />}
+              {show && <BookNow handleClose={handleClose} handleClickClose={handleClickClose} />}
             </Col>
             <Owner />
         </Row>
@@ -145,6 +177,21 @@ const Venue = () => {
         </Row>
      </Container>
     </main>
+    <Modal show={showConfirmation} onHide={handleCloseConfirmation}>
+        <Modal.Header closeButton>
+          <Modal.Title>Book Venue</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>hello yes booked</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseConfirmation}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+    
     </>
   )
 };
