@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './allvenues.css';
 import filter from '../../assets/filter.png';
 import Card from 'react-bootstrap/Card';
@@ -17,6 +18,29 @@ import { MdOutlineEmojiFoodBeverage, MdPets } from 'react-icons/md';
 const AllVenues = () => {
   const { dataValues, isLoading, isError } = useApi(apiURL + holidazeVenues + '?_owner=true');
 
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  
+  const additionalFilterLocation = queryParams.get('location') || '';
+  const additionalFilterGuest = queryParams.get('maxGuests') || '';
+  const additionalFilterPrice = queryParams.get('maxPrice') || '';
+    
+  const additionalFilterList = dataValues?.filter((items) => {
+    // Additional filter logic
+    if (additionalFilterLocation && items.location.country !== additionalFilterLocation) {
+      return false;
+    }
+    if (additionalFilterGuest && items.maxGuests !== parseInt(additionalFilterGuest)) {
+      return false;
+    }
+    if (additionalFilterPrice && items.price !== parseInt(additionalFilterPrice)) {
+      return false;
+    }
+    
+    return true;
+  });
+  
+
   //Search bar
   const [query, setQuery] = useState('');
 
@@ -33,9 +57,6 @@ const AllVenues = () => {
    const [show, setShow] = useState(false);
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
-
-const handleClick = () => {
-}
 
   // Filtered list
   const filteredList = dataValues?.filter((items) => {
@@ -72,7 +93,7 @@ const handleClick = () => {
     if (guests && items.maxGuests < guests) {
       return false;
     }
-    
+
     return true;
      
   });

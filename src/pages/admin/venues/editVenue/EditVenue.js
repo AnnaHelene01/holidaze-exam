@@ -3,7 +3,7 @@ import '../../overview/admin.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../components/venues.css'
 import { Button } from '../../../../components/styledComponents/mainStyles';
-import { MdOutlineEmojiFoodBeverage, MdPanoramaWideAngle, MdPets } from 'react-icons/md';
+import { MdOutlineEmojiFoodBeverage, MdPets } from 'react-icons/md';
 import { AiFillCar, AiOutlineWifi } from 'react-icons/ai';
 import { editSchema } from '../../../../utils/schema';
 import { useForm } from 'react-hook-form';
@@ -24,12 +24,30 @@ const EditVenue = () => {
 
   const { dataValues } = useApi(`${apiURL}${holidazeVenues}/${id}`);
   //console.log("DataValues: ", dataValues);
+  useEffect(() => {
+    if (dataValues) {
+      setValue('name', dataValues.name);
+      setValue('description', dataValues?.description);
+      setValue('maxGuests', dataValues?.maxGuests);
+      setValue('price', dataValues?.price);
+  
+      // Set location values
+      if (dataValues?.location) {
+        setValue('location.address', dataValues?.location?.address);
+        setValue('location.city', dataValues?.location?.city);
+        setValue('location.zip', dataValues?.location?.zip);
+        setValue('location.country', dataValues?.location?.country);
+      }
+    }
+  }, [dataValues]);
+  
+  
 
   const [wifi, setWifi] = useState(dataValues?.meta?.wifi || false);
   const [parking, setParking] = useState(dataValues?.meta?.parking || false);
   const [breakfast, setBreakfast] = useState(dataValues?.meta?.breakfast || false);
   const [pets, setPets] = useState(dataValues?.meta?.pets || false);
-  
+    
 
     // toggle function for each button
     const toggleWifi = () => {
@@ -52,6 +70,7 @@ const EditVenue = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
     watch, // Add watch function
   } = useForm({
@@ -71,30 +90,26 @@ const EditVenue = () => {
   }, [data]);
 
   async function onFormSubmit(editVenue) {
-    console.log(dataValues)
-
-if (!editVenue.name) {
-    editVenue.name = dataValues.name
-}
-if (!editVenue.price) {
-    editVenue.price = dataValues.price
-}
-
+    const { address, city, zip, country } = editVenue.location;
+    editVenue.location = { address, city, zip, country };
+  
     const metaValues = {
       breakfast: breakfast,
       wifi: wifi,
       parking: parking,
       pets: pets
     };
+  
     editVenue = { ...editVenue, meta: metaValues };
-
+  
     try {
-        console.log(editVenue)
-     // await putData(`${apiURL}${holidazeVenues}/${id}`, editVenue);
+      console.log('fire ', editVenue);
+      await putData(`${apiURL}${holidazeVenues}/${id}`, editVenue);
     } catch (error) {
       console.error("Edit venue failed: ", error);
     }
   }
+  
     
   return (
     <>
@@ -227,6 +242,7 @@ if (!editVenue.price) {
                                 name="city"
                                 {...register('city')}
                                 defaultValue={dataValues?.location?.city}
+                                
                             />
                         </Col>
                     </Row>

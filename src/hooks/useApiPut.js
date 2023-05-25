@@ -19,7 +19,7 @@ function useApiPut() {
                 },
                 body: JSON.stringify(payload),
             }); 
-            console.log("Response: ", response);
+            //console.log("Response: ", response);
             const json = await response.json();
             setData(json);
         } catch (error) {

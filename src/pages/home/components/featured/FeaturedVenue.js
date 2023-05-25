@@ -6,6 +6,7 @@ import { MdAirportShuttle, MdBathtub, MdKingBed, MdLocationOn, MdOutlineEmojiFoo
 import { FaWifi } from 'react-icons/fa';
 import './featured.css'
 import { AiFillCar, AiOutlineWifi } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const FeaturedVenue = ({ venueId }) => {
 
@@ -66,8 +67,9 @@ const FeaturedVenue = ({ venueId }) => {
                     <MdLocationOn className="icon"/>
                     <small>{dataValues?.location?.address}, {dataValues?.location?.city}</small> 
                 </div>
-
-                <button className='offer-btn flex'>View Details <BsArrowRightShort className='icon'/></button>
+                <Link to={`/venue/${venueId}`} className='text-decoration-none'>
+                    <button className='offer-btn flex'>View Details <BsArrowRightShort className='icon'/></button>
+                </Link>
               </div>
             </div>    
 

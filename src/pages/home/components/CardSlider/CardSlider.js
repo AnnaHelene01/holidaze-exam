@@ -77,7 +77,10 @@ import { BsArrowRightShort } from 'react-icons/bs'
                   {location}
                 </p>
   
-                <BsArrowRightShort className='overlay-icon'/>
+                <BsArrowRightShort 
+                  className='overlay-icon'
+                  
+                />
                
             </div>
             </div>
