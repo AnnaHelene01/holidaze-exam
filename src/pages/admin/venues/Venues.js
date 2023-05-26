@@ -34,7 +34,6 @@ const Venues = () => {
           const data = await response.json(); // Extract JSON data
           setVenues(data);
           setLoading(false);
-          console.log(venues);
         } catch (error) {
           console.error(error);
         }
@@ -53,8 +52,8 @@ const Venues = () => {
         <div className={!adminVisible ? 'page mt-5' : 'page page-with-navbar mt-5'}>
             <Container className='p-5'>
                 <div className='adminHeader'>
-                    <h1 className='adminHeadOne primaryHeader'>Manage</h1>
-                    <h1 className='adminHeadTwo mt-5'>Holidaze</h1>
+                      <h1 className='adminHeadOne primaryHeader'>Manage</h1>
+                      <h1 className='adminHeadTwo mt-5'>Holidaze</h1>
                 </div> 
                 <h1>Venues</h1>
                 <p>You have a total {venues.length} of venues!</p>
@@ -65,7 +64,7 @@ const Venues = () => {
                             </button>
                         </div>
                 <Row className='bg-white p-2 p-md-4 p-lg-5 row-cols-1 row-cols-md-2 row-cols-lg-3'>
-                  {venues?.map((venue) => (
+                  {venues.map((venue) => (
                       <Col key={venue.id} className='mb-4'>
                         <VenueCard venue={venue} />
                       </Col>

@@ -57,7 +57,8 @@
     width: 100%;
   }
    .locationDiv label, 
-   .priceDiv label {
+   .priceDiv label,
+   .distDiv label {
     display: block;
     color: var(--textColor);
     font-weight: 500;
