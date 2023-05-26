@@ -23,10 +23,6 @@ const BookNow = ({ handleClose, handleClickClose }) => {
   //Get bookings for Venue
   const { dataValues, isLoading, isError } = useApi(apiURL + holidazeVenues + '/' + venueId + "?_bookings=true");
 
-  // const handleCloseConfirmation = () => setShowConfirmation(false);
-  // const handleShowConfirmation = () => setShowConfirmation(true);
-
-
   const { bookings } = dataValues;
   //console.log( bookings );
 

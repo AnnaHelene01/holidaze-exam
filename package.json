@@ -9,11 +9,12 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
+    "date-fns": "^2.30.0",
     "formik": "^2.2.9",
     "mdb-react-ui-kit": "^6.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.3",
-    "react-datepicker": "^4.11.0",
+    "react-datepicker": "^4.12.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-multi-carousel": "^2.8.3",
@@ -28,7 +29,7 @@
     "yup": "^1.1.1"
   },
   "scripts": {
-    "start": "PORT=3000 react-scripts start",    
+    "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -182,7 +182,7 @@ const Venue = () => {
           <Modal.Title>Book Venue</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>hello yes booked</p>
+          <p>Venue is booked!</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseConfirmation}>
