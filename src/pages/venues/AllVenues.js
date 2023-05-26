@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './allvenues.css';
 import filter from '../../assets/filter.png';
@@ -17,34 +17,14 @@ import { MdOutlineEmojiFoodBeverage, MdPets } from 'react-icons/md';
 
 const AllVenues = () => {
   const { dataValues, isLoading, isError } = useApi(apiURL + holidazeVenues + '?_owner=true');
-
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   
+  //Filter states
   const additionalFilterLocation = queryParams.get('location') || '';
   const additionalFilterGuest = queryParams.get('maxGuests') || '';
   const additionalFilterPrice = queryParams.get('maxPrice') || '';
-    
-  const additionalFilterList = dataValues?.filter((items) => {
-    // Additional filter logic
-    if (additionalFilterLocation && items.location.country !== additionalFilterLocation) {
-      return false;
-    }
-    if (additionalFilterGuest && items.maxGuests !== parseInt(additionalFilterGuest)) {
-      return false;
-    }
-    if (additionalFilterPrice && items.price !== parseInt(additionalFilterPrice)) {
-      return false;
-    }
-    
-    return true;
-  });
-  
-
-  //Search bar
   const [query, setQuery] = useState('');
-
-  // Filter states
   const [wifi, setWifi] = useState(false);
   const [parking, setParking] = useState(false);
   const [breakfast, setBreakfast] = useState(false);
@@ -58,46 +38,67 @@ const AllVenues = () => {
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
 
-  // Filtered list
-  const filteredList = dataValues?.filter((items) => {
-    // Filter logic
-    if (wifi && !items.meta.wifi) {
-      return false;
-    }
-    if (parking && !items.meta.parking) {
-      return false;
-    }
-    if (breakfast && !items.meta.breakfast) {
-      return false;
-    }
-    if (pets && !items.meta.pets) {
-      return false;
-    }
-    if (query) {
-      const queryLower = query.toLowerCase();
-      if (
-        !items.name?.toLowerCase().includes(queryLower) &&
-        !items.owner.name?.toLowerCase().includes(queryLower) &&
-        !items.location.city?.toLowerCase().includes(queryLower) &&
-        !items.location.country?.toLowerCase().includes(queryLower)
-      ) {
-        return false;
-      }
-    }
-    if (guests && items.maxGuests < guests) {
-      return false;
-    }
-    if (items.price < minPrice || items.price > maxPrice) {
-      return false;
-    }
-    if (guests && items.maxGuests < guests) {
-      return false;
-    }
+   const [mergedFilteredList, setMergedFilteredList] = useState([]);
 
-    return true;
-     
-  });
+   useEffect(() => {
+    if (dataValues) {
+      const filteredData = dataValues?.filter((items) => {
+        // Filter logic based on additional filters
+        if (additionalFilterLocation && items.location.country !== additionalFilterLocation) {
+          return false;
+        }
+        if (additionalFilterGuest && items.maxGuests !== parseInt(additionalFilterGuest)) {
+          return false;
+        }
+        if (additionalFilterPrice && (items.price < 0 || items.price > parseInt(additionalFilterPrice))) {
+          return false;
+        }
+        return true;
+      });
+  
+      const mergedList = filteredData.filter((items) => {
+        // Filter logic based on modal filters
+        if (wifi && !items.meta.wifi) {
+          return false;
+        }
+        if (parking && !items.meta.parking) {
+          return false;
+        }
+        if (breakfast && !items.meta.breakfast) {
+          return false;
+        }
+        if (pets && !items.meta.pets) {
+          return false;
+        }
+        if (query) {
+          const queryLower = query.toLowerCase();
+          if (
+            !items.name?.toLowerCase().includes(queryLower) &&
+            !items.owner.name?.toLowerCase().includes(queryLower) &&
+            !items.location.city?.toLowerCase().includes(queryLower) &&
+            !items.location.country?.toLowerCase().includes(queryLower)
+          ) {
+            return false;
+          }
+        }
+        if (guests && items.maxGuests < guests) {
+          return false;
+        }
+        if (items.price < minPrice || items.price > maxPrice) {
+          return false;
+        }
+        return true;
+      });
+  
+      setMergedFilteredList(mergedList);
+    }
+  }, [dataValues, additionalFilterLocation, additionalFilterGuest, additionalFilterPrice, wifi, parking, breakfast, pets, query, guests, minPrice, maxPrice]);
+  
 
+  const handleUndoFiltering = () => {
+    const newQuery = ``;
+    window.location.href=`/allvenues${query}`
+  };
 
   if(isLoading){
     return <Loader />
@@ -117,7 +118,7 @@ const AllVenues = () => {
         </div>
 
         <div className='d-flex justify-content-between align-items-center mb-4'>
-          <div>
+          <div className='mb-2'>
             <p>Search for products</p>
             <MDBInput
               placeholder='Search'
@@ -127,10 +128,13 @@ const AllVenues = () => {
               onChange={(e) => setQuery(e.target.value)}
             />
           </div>
+          <button className="btn-undo-filtering mt-4" onClick={handleUndoFiltering}>
+            Undo Filtering
+          </button>
 
           <button className='btn-filter mt-4' onClick={handleShow}>
           <img src={filter} alt='icon' className='btn-filter-icon' />
-          <span className='btn-filter-span'>FILTER </span>
+          <span className='btn-filter-span'>Filter </span>
         </button>
           <FilterModal
               setWifi={setWifi}
@@ -153,8 +157,11 @@ const AllVenues = () => {
 
             </div>
                 <Row className='justify-content-center'>
-                    {filteredList.map((item) => (
-                        item.media.map((mediaUrl, idx) => (
+                {mergedFilteredList.length === 0 ? (
+                  <div className="text-center">Sorry, no venues found for this filtering.</div>
+                    ) : (
+                    mergedFilteredList.map((item) =>
+                       item.media.map((mediaUrl, idx) => (
                             <Col sm="10" md="6" lg="4" className='md:p-4 sm:p-1 mb-4' key={`${item.id}-${idx}`}>
                                 <Card>
                                     <Card.Img 

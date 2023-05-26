@@ -34,6 +34,7 @@ const Venues = () => {
           const data = await response.json(); // Extract JSON data
           setVenues(data);
           setLoading(false);
+          console.log(venues);
         } catch (error) {
           console.error(error);
         }

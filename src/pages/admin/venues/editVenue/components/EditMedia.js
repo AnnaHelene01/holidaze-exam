@@ -51,24 +51,30 @@ const EditMedia = ({ register, errors }) => {
           <Form.Control
             as="textarea"
             rows={1}
-            name={`media[${index}]`}
+            name={`media-${index}`}
             {...register(`media[${index}]`)}
             defaultValue={url}
           />
-          {index === 0 ? (
-            <button className="addmedia-btn" onClick={addMediaInput}>
-              <MdAdd className="addmedia-icon" />
-            </button>
-          ) : (
-            <button className="addmedia-btn" onClick={() => removeMediaInput(index)}>
-              <RiDeleteBinLine className="addmedia-icon" />
-            </button>
-          )}
+          <button className="addmedia-btn" onClick={() => removeMediaInput(index)}>
+            <RiDeleteBinLine className="addmedia-icon" />
+          </button>
         </div>
       ));
       setMediaInputs(inputs);
     } else {
-      setMediaInputs([]);
+      setMediaInputs([
+        <div className="d-flex align-items-center mb-2" key="media-input-0">
+          <Form.Control
+            as="textarea"
+            rows={1}
+            name="media-0"
+            {...register('media[0]')}
+          />
+          <button className="addmedia-btn" onClick={addMediaInput}>
+            <MdAdd className="addmedia-icon" />
+          </button>
+        </div>,
+      ]);
     }
   }, [dataValues, register]);
 

@@ -16,13 +16,30 @@
     padding-top: 1rem;
 }
 
+  /*Undo filter btn */
+  .btn-undo-filtering {
+    background-color: var(--PrimaryColor);
+    border: 1px solid #000000;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-undo-filtering:hover {
+    background-color: var(--SecondaryColor);
+    color: black;
+  }
+
   /* Filter BUTTON */
   .btn-filter {
     display: flex;
     align-items: center; 
     justify-content: center; 
     background-color: #FFF;
-    padding: 1rem 2rem;
+    padding: 0.6rem 2rem;
     border-radius: 10px;
     border: 2px solid var(--PrimaryColor);
 

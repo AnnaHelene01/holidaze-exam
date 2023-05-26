@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import './home.css'
-import CardSlider from './components/CardSlider/CardSlider'
-
 import { Button, Container } from '../../components/styledComponents/mainStyles';
 import { Link } from 'react-router-dom';
 import DesignComp from './components/DesignComp';
 import Featured from './components/featured/Featured';
+import Popular from './components/popular/Popular';
 
 const Home = () => {
 
@@ -56,7 +55,7 @@ const Home = () => {
         </div>
       </Container>
     </section> 
-    <CardSlider />
+    <Popular />
     <Featured />
     <DesignComp />
     </>

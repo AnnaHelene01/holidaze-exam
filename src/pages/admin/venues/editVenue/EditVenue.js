@@ -17,14 +17,14 @@ import useApiPut from '../../../../hooks/useApiPut';
 import EditMedia from './components/EditMedia';
 
 const EditVenue = () => {
-  const [adminVisible] = useState(false);
-  const { id } = useParams();
-
-  const { dataValues, isError} = useApi(`${apiURL}${holidazeVenues}/${id}`);
-
-  if (isError) {
-    <h1>Im sorry, something went wrong!</h1>
-  }
+    const [adminVisible] = useState(false);
+    const { id } = useParams();
+    const { dataValues, isError } = useApi(`${apiURL}${holidazeVenues}/${id}`);
+    const { data, putData, isLoading } = useApiPut();
+    const [wifi, setWifi] = useState(false);
+    const [parking, setParking] = useState(false);
+    const [breakfast, setBreakfast] = useState(false);
+    const [pets, setPets] = useState(false);
 
   useEffect(() => {
     if (dataValues) {
@@ -44,51 +44,41 @@ const EditVenue = () => {
     }
   }, [dataValues]);
   
-    const [wifi, setWifi] = useState(dataValues?.meta?.wifi);
-    const [parking, setParking] = useState(dataValues?.meta?.parking);
-    const [breakfast, setBreakfast] = useState(dataValues?.meta?.breakfast);
-    const [pets, setPets] = useState(dataValues?.meta?.pets);  
-    
-  
-    // toggle function for each button
-    const toggleWifi = () => {
-        setWifi(!wifi);
-    };
+  useEffect(() => {
+    if (data) {
+      console.log('Data: ', data);
+    }
+  }, [data]);
 
-    const toggleParking = () => {
-        setParking(!parking);
-    };
+  const toggleWifi = () => {
+    setWifi(!wifi);
+  };
 
-    const toggleBreakfast = () => {
-        setBreakfast(!breakfast);
-    };
+  const toggleParking = () => {
+    setParking(!parking);
+  };
 
-    const togglePets = () => {
-        setPets(!pets);
-    };
+  const toggleBreakfast = () => {
+    setBreakfast(!breakfast);
+  };
+
+  const togglePets = () => {
+    setPets(!pets);
+  };
 
   const {
     register,
     handleSubmit,
     setValue,
     formState: { errors },
-    watch, // Add watch function
+    watch,
   } = useForm({
     resolver: yupResolver(editSchema),
   });
 
-  const watchedValues = watch(); // Get the current watched values
+  const watchedValues = watch();
 
-  const { data, putData, isLoading } = useApiPut();
-  const accessToken = JSON.parse(localStorage.getItem("accessToken"));
-
-  useEffect(() => {
-    if (data) {
-      console.log("Data: ", data);
-    }
-  }, [data]);
-
-  async function onFormSubmit(editVenue) {
+  const onFormSubmit = async (editVenue) => {
     const { address, city, zip, country } = editVenue.location;
     editVenue.location = { address, city, zip, country };
   
@@ -103,12 +93,15 @@ const EditVenue = () => {
   
     try {
       console.log('fire ', editVenue);
-      //await putData(`${apiURL}${holidazeVenues}/${id}`, editVenue);
+      // await putData(`${apiURL}${holidazeVenues}/${id}`, editVenue);
     } catch (error) {
       console.error("Edit venue failed: ", error);
     }
+  };
+
+  if (isError) {
+    return <h1>Im sorry, something went wrong!</h1>;
   }
-  
     
   return (
     <>
