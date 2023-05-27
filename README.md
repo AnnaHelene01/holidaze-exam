@@ -8,9 +8,9 @@ The API I used for this project can be found under
 - [API Documentation](https://docs.noroff.dev/holidaze/venues) 
 - [API Endpoints](https://nf-api.onrender.com/docs/static/index.html#/)
 
-- Netlify Status
-## Link to the task:
+## Netlify status / Link to the task:
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7bc6dc4d-148b-447d-a5d8-3e22fb1a8d9e/deploy-status)](https://app.netlify.com/sites/holidaze-projectexam/deploys)
+ - [Netlify](https://holidaze-projectexam.netlify.app/)
 - 
 
 ## Setup
