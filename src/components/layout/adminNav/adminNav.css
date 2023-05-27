@@ -132,6 +132,7 @@
 
 @media only screen and (max-width: 450px){
 	.mobile-nav{
+		display: block;
 		display: flex;
 		align-items: center;
 	}

@@ -38,7 +38,7 @@ function AdminSidebar() {
 
   return (
     <>
-      <div className="mobile-nav d-flex">
+      <div className="mobile-nav">
         <button className="mobile-nav-btn" onClick={toggleVisible}>
           <FaBars size={24} />
         </button>
