@@ -8,9 +8,9 @@ The API I used for this project can be found under
 - [API Documentation](https://docs.noroff.dev/holidaze/venues) 
 - [API Endpoints](https://nf-api.onrender.com/docs/static/index.html#/)
 
-- Netlify Status
-## Link to the task:
+## Netlify status / Link to the task:
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7bc6dc4d-148b-447d-a5d8-3e22fb1a8d9e/deploy-status)](https://app.netlify.com/sites/holidaze-projectexam/deploys)
+ - [Netlify](https://holidaze-projectexam.netlify.app/)
 - 
 
 ## Setup
@@ -31,12 +31,12 @@ $ npm start
   - [Delivery]()
 
 ### Style guide:
-<img width="842" alt="Skjermbilde 2022-11-21 kl  14 26 03" src="https://user-images.githubusercontent.com/91527942/203068012-3a22f43d-6f5d-4fa6-ac33-e91529a2262b.png">
+<img width="842" alt="Skjermbilde 2022-11-21 kl  14 26 03" src="https://github.com/AnnaHelene01/holidaze-exam/blob/main/planning/StyleGuide.png?raw=true">
 
 &nbsp;
 
 ### Gant Chart
-<img width="1428" alt="Skjermbilde 2022-11-21 kl  15 54 15" src="https://user-images.githubusercontent.com/91527942/203085886-a45ba01d-cf65-4f12-b297-64349f18b52d.png">
+<img width="1428" alt="Skjermbilde 2022-11-21 kl  15 54 15" src="https://github.com/AnnaHelene01/holidaze-exam/blob/main/planning/Gant.png?raw=true">
 
 &nbsp;
 
