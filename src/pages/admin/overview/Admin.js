@@ -121,37 +121,20 @@ const Admin = () => {
                 <Col className='mt-4'>
                     <Card>
                         <Card.Body>
-                            <Card.Title>Something cool here</Card.Title>
+                            <Card.Title>Lorem ipsum</Card.Title>
                         </Card.Body>
                     </Card>                 
                 </Col>     
                 <Col className='mt-4'>
                     <Card>
                         <Card.Body>
-                            <Card.Title>Get shit done!</Card.Title>
+                            <Card.Title>Get stuff done!</Card.Title>
                             <TodoList />
                         </Card.Body>
                     </Card>
                 </Col>           
             </Row>
             </div>
-            <h2 className='mt-5'>Upcoming bookings</h2>
-            <Row>
-                <Col className='mt-4'>
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>Something cool here</Card.Title>
-                        </Card.Body>
-                    </Card> 
-                </Col>
-                <Col className='mt-4'>
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>Something cool here</Card.Title>
-                        </Card.Body>
-                    </Card> 
-                </Col>
-            </Row>
         </Container>
         </div>
     
