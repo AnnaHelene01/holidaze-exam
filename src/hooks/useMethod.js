@@ -24,13 +24,10 @@ function useMethod() {
           const json = await response.json();
           setData(json);
         } else {
-          console.log('Request failed with status:', response.status);
           const error = await response.json();
-          console.log('Error:', error);
           setIsError(true);
         }
       } catch (error) {
-        console.log('An error occurred:', error);
         setIsError(true);
       } finally {
         setIsLoading(false);

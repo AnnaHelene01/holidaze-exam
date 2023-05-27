@@ -25,12 +25,9 @@ const UpcomingBookings = () => {
               `${apiURL}${holidazeProfiles}/${profileName}?_bookings=true`,
               options
             );
-            console.log(response);
             const data = await response.json(); // Extract JSON data
             setBookings(data);
-            console.log(bookings)
             
-            console.log("Data: ", data); // Log the extracted data
           } catch (error) {
             console.error(error);
           }
@@ -42,7 +39,6 @@ const UpcomingBookings = () => {
 
         async function deleteBooking(bookingId) {
             const url = `${apiURL}${holidazeBookings}/${bookingId}`;
-            console.log(url);
             try {
               const options = {
                 method: 'DELETE',

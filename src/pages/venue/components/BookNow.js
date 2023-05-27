@@ -24,7 +24,6 @@ const BookNow = ({ handleClose, handleClickClose }) => {
   const { dataValues, isLoading, isError } = useApi(apiURL + holidazeVenues + '/' + venueId + "?_bookings=true");
 
   const { bookings } = dataValues;
-  //console.log( bookings );
 
   //Watch for changes in the variable to update calender accordingly 
   useEffect(() => {
@@ -51,7 +50,6 @@ const BookNow = ({ handleClose, handleClickClose }) => {
             setEndDate(null)
             break
         } else {
-           // console.log(test1, test2, dis)
         }
     }
   };
@@ -137,7 +135,7 @@ const BookNow = ({ handleClose, handleClickClose }) => {
                 <Form.Label>Check Out</Form.Label>
                 <DatePicker
                     selected={endDate}
-                    onChange={(date) => {setEndDate(date); console.log(date); isDateBooked(date)}}
+                    onChange={(date) => {setEndDate(date); isDateBooked(date)}}
                     selectsEnd
                     startDate={startDate}
                     endDate={endDate}

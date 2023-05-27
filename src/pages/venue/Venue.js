@@ -23,37 +23,26 @@ const Venue = () => {
   const [show, setShow] = useState(false);
 
   const [showConfirmation, setShowConfirmation] = useState(false);
-  // console.log(showConfirmation)
 
   const handleCloseConfirmation = () => {
     setShowConfirmation(false)
     window.location.href = "/"
   };
-  // const handleShowConfirmation = () => setShowConfirmation(true);
-  
-
-
 
   const profileName = JSON.parse(localStorage.getItem('username'));
-  //console.log("ProfileName: ", profileName);
  
 
   const handleClose = () => {
     setShow(false);
        setShowConfirmation(!showConfirmation);
-      //  console.log(showConfirmation);
   };
 
   const handleClickClose = () => {
     setShow(false);
-      //  console.log(showConfirmation);
   };
 
   const handleShow = () => {
     setShow(true);
-    
-  
-  // console.log(showConfirmation)
   };
 
   
@@ -68,7 +57,6 @@ const Venue = () => {
   }
 
   const { name, description = '', price, meta, rating, maxGuests, owner, location } = dataValues;
-  //console.log(dataValues);
 
   const toggleDescription = () => {
     setShowFullDescription(!showFullDescription);

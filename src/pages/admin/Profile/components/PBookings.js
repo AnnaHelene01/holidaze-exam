@@ -27,7 +27,6 @@ const PBookings = () => {
             );
             const data = await response.json(); // Extract JSON data
             setBookings(data);
-            console.log("Data: ", data); // Log the extracted data
           } catch (error) {
             console.error(error);
           }

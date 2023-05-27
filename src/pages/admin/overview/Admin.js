@@ -31,7 +31,6 @@ const Admin = () => {
           );
           const data = await response.json(); // Extract JSON data
           setVenues(data);
-          console.log("Data: ", data); // Log the extracted data
         } catch (error) {
           console.error(error);
         }
@@ -56,7 +55,6 @@ const Admin = () => {
               );
               const data = await response.json(); // Extract JSON data
               setBookings(data);
-              console.log("Data: ", data); // Log the extracted data
             } catch (error) {
               console.error(error);
             }

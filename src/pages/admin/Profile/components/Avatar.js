@@ -42,13 +42,10 @@ async function getProfile() {
     );
     const data = await response.json(); // Extract JSON data
     setProfile(data);
-   //console.log(data);
-    //console.log("Data: ", data); // Log the extracted data
   } catch (error) {
     console.error(error);
   }
 }
-//console.log(profile);
 
 useEffect (() => {
   if (name && name.trim()) {
@@ -73,18 +70,8 @@ useEffect (() => {
     });
     setAvatar(data.avatar);
     window.location.reload();
-    //localStorage.setItem(data)
-   console.log(data)
-    // console.log("in put data" + data.avatar)
 
   };
-
-  //  useEffect((data) => {
-  //   if (data) {
-  //     localStorage.setItem({avatar: JSON.stringify(data)});
-  //   }
-  //    console.log(data)
-  //  }, [data]);
 
   return (
     <Row className="bg-white p-5">

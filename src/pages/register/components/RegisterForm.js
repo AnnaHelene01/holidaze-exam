@@ -28,19 +28,14 @@ const RegisterForm = () => {
   
   
 async function onFormSubmit(event) {
-    console.log(event)
   
       if (!isValid) { // <-- use isValid from formState
         return; // Do not submit the form if it's not valid
       }
   
       event.venueManager = selectedCheckbox
-      console.log(event)
-      console.log(apiURL + authRegister)
       try {
         await postData(apiURL + authRegister, event );
-      //console.log(data)
-          console.log("Registration successful!");
           window.location.href = '/login';
         } catch (error) {
           console.error("Registration failed: ", error);

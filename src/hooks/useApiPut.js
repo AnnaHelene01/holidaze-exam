@@ -19,11 +19,9 @@ function useApiPut() {
                 },
                 body: JSON.stringify(payload),
             }); 
-            //console.log("Response: ", response);
             const json = await response.json();
             setData(json);
         } catch (error) {
-            console.log(error);
             setIsError(true);
         } finally {
             setIsLoading(false);

@@ -54,7 +54,6 @@ const LoginForm = () => {
   
     useEffect(() => {
         if (data) {
-          console.log("Login: ", data);
             window.location.href = '/';
             setAccessToken(data.accessToken);
             setName(data.name);

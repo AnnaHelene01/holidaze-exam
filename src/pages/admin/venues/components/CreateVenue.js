@@ -83,7 +83,6 @@ const CreateVenue = () => {
         });
         
 async function onFormSubmit(addVenue) {
-  console.log("addVenue: ", addVenue);
 
   // Create media objects using the values from the media array
   const mediaObjects = media.map((mediaUrl) => ({ url: mediaUrl }));
@@ -108,7 +107,7 @@ async function onFormSubmit(addVenue) {
 
   try {
     await postInfo(apiURL + holidazeVenues, addVenue);
-    //window.location.href = `/admin/venues/${profileName}`;
+    window.location.href = `/admin/venues/${profileName}`;
   } catch (error) {
     console.error("Create venue failed: ", error);
   }

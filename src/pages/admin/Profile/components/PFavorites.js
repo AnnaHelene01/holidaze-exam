@@ -9,8 +9,6 @@ const PFavorites = () => {
   const favorites = useSelector((state) => state.favorites);
   const dispatch = useDispatch();
 
-  console.log(favorites);
-
   const handleRemove = (venueId) => {
     dispatch(removeFavorites(venueId));
   };

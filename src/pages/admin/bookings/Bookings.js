@@ -71,7 +71,6 @@ const Bookings = () => {
       
       setBookings(bookingsWithCustomers);
       setLoading(false); // Set loading state to false when data fetching is complete
-      //console.log("Bookings data:", bookingsWithCustomers); // Log the bookings data
 
     } catch (error) {
       console.error(error);

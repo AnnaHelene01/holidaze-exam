@@ -46,7 +46,6 @@ const EditVenue = () => {
   
   useEffect(() => {
     if (data) {
-      console.log('Data: ', data);
     }
   }, [data]);
 
@@ -92,8 +91,7 @@ const EditVenue = () => {
     editVenue = { ...editVenue, meta: metaValues };
   
     try {
-      console.log('fire ', editVenue);
-      // await putData(`${apiURL}${holidazeVenues}/${id}`, editVenue);
+      await putData(`${apiURL}${holidazeVenues}/${id}`, editVenue);
     } catch (error) {
       console.error("Edit venue failed: ", error);
     }

@@ -9,7 +9,6 @@ const VenueCard = ({venue}) => {
 
     async function deletePost () {
         const url = `${apiURL}${holidazeVenues}/${venue.id}`;
-        console.log(url);
          try {
             const accessToken = JSON.parse(localStorage.getItem("accessToken"));
             const options = {

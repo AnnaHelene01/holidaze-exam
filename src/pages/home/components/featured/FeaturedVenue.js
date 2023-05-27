@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 const FeaturedVenue = ({ venueId }) => {
 
     const { dataValues, isLoading, isError } = useApi(apiURL + holidazeVenues + '/' + venueId);
-    //console.log(dataValues)
 
   return (
     <>
