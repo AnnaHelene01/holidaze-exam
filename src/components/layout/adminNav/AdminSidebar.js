@@ -22,7 +22,6 @@ function AdminSidebar() {
   const isAdmin = location.pathname === '/admin';
 
   //Get user from localStorage
-  const accessToken = localStorage.getItem("accessToken");
   const userName = JSON.parse(localStorage.getItem('username'));
   //const avatarString = localStorage.getItem('avatar');
   const avatar = JSON.parse(localStorage.getItem('avatar'));
@@ -39,7 +38,7 @@ function AdminSidebar() {
 
   return (
     <>
-      <div className="mobile-nav">
+      <div className="mobile-nav d-flex">
         <button className="mobile-nav-btn" onClick={toggleVisible}>
           <FaBars size={24} />
         </button>

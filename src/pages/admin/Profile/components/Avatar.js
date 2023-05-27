@@ -104,7 +104,7 @@ useEffect (() => {
             pattern="^https?:\/\/.*\.(?:png|jpg|jpeg)$"
             {...register('avatar')}
           />
-          <button onClick={handleSubmit(onSubmit)}>UPDATE AVATAR</button>
+          <button onClick={handleSubmit(onSubmit)} className='text-decoration-none'>UPDATE AVATAR</button>
         </div>
         {errors.avatar && (
           <span className="text-danger">{errors.avatar.message}</span>

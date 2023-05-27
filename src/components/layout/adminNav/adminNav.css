@@ -150,4 +150,8 @@
 	.admin-btn{
 		display: none;
 	}
+
+	.admin-top {
+		margin-top: 3rem;
+	}
 }
