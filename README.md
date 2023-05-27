@@ -31,12 +31,12 @@ $ npm start
   - [Delivery]()
 
 ### Style guide:
-<img width="842" alt="Skjermbilde 2022-11-21 kl  14 26 03" src="https://user-images.githubusercontent.com/91527942/203068012-3a22f43d-6f5d-4fa6-ac33-e91529a2262b.png">
+<img width="842" alt="Skjermbilde 2022-11-21 kl  14 26 03" src="https://github.com/AnnaHelene01/holidaze-exam/blob/main/planning/StyleGuide.png?raw=true">
 
 &nbsp;
 
 ### Gant Chart
-<img width="1428" alt="Skjermbilde 2022-11-21 kl  15 54 15" src="https://user-images.githubusercontent.com/91527942/203085886-a45ba01d-cf65-4f12-b297-64349f18b52d.png">
+<img width="1428" alt="Skjermbilde 2022-11-21 kl  15 54 15" src="https://github.com/AnnaHelene01/holidaze-exam/blob/main/planning/Gant.png?raw=true">
 
 &nbsp;
 
