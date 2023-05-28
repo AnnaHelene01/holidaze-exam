@@ -11,7 +11,6 @@ The API I used for this project can be found under
 ## Netlify status / Link to the task:
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7bc6dc4d-148b-447d-a5d8-3e22fb1a8d9e/deploy-status)](https://app.netlify.com/sites/holidaze-projectexam/deploys)
  - [Netlify](https://holidaze-projectexam.netlify.app/)
-- 
 
 ## Setup
 To run this project, install it locally using NPM:
@@ -22,14 +21,7 @@ $ npm start
 
 &nbsp;
 
-## Table of Contents
-- [Project planning]()
-  - [Style Guide]()
-  - [Gant Chart]()
-  - [High fidelity Wireframe]()
-  - [Design/Protoype]()
-  - [Delivery]()
-
+## Project Planning
 ### Style guide:
 <img width="842" alt="Skjermbilde 2022-11-21 kl  14 26 03" src="https://github.com/AnnaHelene01/holidaze-exam/blob/main/planning/StyleGuide.png?raw=true">
 
@@ -47,7 +39,7 @@ $ npm start
 
 ### Figma 
   - [High fidelity Wireframe](https://www.figma.com/file/GXFBiwqLUg4jBMGfEh6h07/Project-Exam?type=design&node-id=1%3A2&t=D9fcZmwcwZHQdwW1-1)
-  -  [Design/Protoype]()
+  -  [Design/Protoype](https://www.figma.com/file/GXFBiwqLUg4jBMGfEh6h07/Project-Exam?type=design&node-id=1%3A3&t=0J9bGBQ2pMH2KCMD-1)
 
 
 
