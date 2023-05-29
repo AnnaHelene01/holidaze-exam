@@ -20,6 +20,7 @@ const EditVenue = () => {
   useEffect(() => {
     document.title = 'Holidaze/Admin/EditVenue';
   }, []);
+
     const [adminVisible] = useState(false);
     const { id } = useParams();
     const { dataValues, isError } = useApi(`${apiURL}${holidazeVenues}/${id}`);
@@ -29,23 +30,15 @@ const EditVenue = () => {
     const [breakfast, setBreakfast] = useState(false);
     const [pets, setPets] = useState(false);
 
-  useEffect(() => {
-    if (dataValues) {
-      setValue('name', dataValues.name);
-      setValue('description', dataValues?.description);
-      setValue('maxGuests', dataValues?.maxGuests);
-      setValue('price', dataValues?.price);
-  
-      // Set location values
-      if (dataValues?.location) {
-        setValue('location.address', dataValues?.location?.address);
-        setValue('location.city', dataValues?.location?.city);
-        setValue('location.zip', dataValues?.location?.zip);
-        setValue('location.country', dataValues?.location?.country);
+    useEffect(() => {
+      if (dataValues) {
+        setValue('name', dataValues.name);
+        setValue('description', dataValues?.description);
+        setValue('maxGuests', dataValues?.maxGuests);
+        setValue('price', dataValues?.price);
       }
+    }, [dataValues]);
     
-    }
-  }, [dataValues]);
   
   useEffect(() => {
     if (data) {
@@ -219,48 +212,48 @@ const EditVenue = () => {
                         <div className='text-venue'>Pets</div>
                     </button>
                     </div>
-                
-                    <Row className='mt-5'>
-                        <Col sm="12" md="6" className='mb-4'>
+                    
+                      <Row className='mt-5'>
+                          <Col sm="12" md="6" className='mb-4'>
                             <h5>ADDRESS</h5>
                             <Form.Control 
-                                type="text" 
-                                name="address"
-                                {...register('address')}
-                                defaultValue={dataValues?.location?.address}
-                                />
-                        </Col>
-                        <Col sm="12" md="6">
+                              type="text" 
+                              name="location.address"
+                              {...register('location.address')}
+                              defaultValue={dataValues?.location?.address}
+                            />
+                          </Col>
+                          <Col sm="12" md="6">
                             <h5>CITY</h5>
                             <Form.Control 
-                                type="text" 
-                                name="city"
-                                {...register('city')}
-                                defaultValue={dataValues?.location?.city}
-                                
+                              type="text" 
+                              name="location.city"
+                              {...register('location.city')}
+                              defaultValue={dataValues?.location?.city}
                             />
-                        </Col>
-                    </Row>
-                    <Row className='mt-4'>
-                        <Col sm="12" md="6" className='mb-4'>
+                          </Col>
+                      </Row>
+                      <Row className='mt-4'>
+                          <Col sm="12" md="6" className='mb-4'>
                             <h5>ZIP</h5>
                             <Form.Control 
-                                type="number" 
-                                name="zip"
-                                {...register('zip')}
-                                defaultValue={dataValues?.location?.zip}
+                              type="number" 
+                              name="location.zip"
+                              {...register('location.zip')}
+                              defaultValue={dataValues?.location?.zip}
                             />
-                        </Col>
-                        <Col sm="12" md="6">
+                          </Col>
+                          <Col sm="12" md="6">
                             <h5>COUNTRY</h5>
                             <Form.Control 
-                                type="text"    
-                                name="country"
-                                {...register('country')}
-                                defaultValue={dataValues?.location?.country}
+                              type="text"    
+                              name="location.country"
+                              {...register('location.country')}
+                              defaultValue={dataValues?.location?.country}
                             />
-                        </Col>
-                    </Row>
+                          </Col>
+                      </Row>
+
                     <Button type="submit" className='mt-4'>
                         EDIT VENUE
                     </Button>
