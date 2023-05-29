@@ -22,6 +22,7 @@ const EditVenue = () => {
   }, []);
 
     const [adminVisible] = useState(false);
+    const profileName = JSON.parse(localStorage.getItem("name"));
     const { id } = useParams();
     const { dataValues, isError } = useApi(`${apiURL}${holidazeVenues}/${id}`);
     const { data, putData, isLoading } = useApiPut();
@@ -36,6 +37,7 @@ const EditVenue = () => {
         setValue('description', dataValues?.description);
         setValue('maxGuests', dataValues?.maxGuests);
         setValue('price', dataValues?.price);
+        setValue('media', dataValues.media)
       }
     }, [dataValues]);
     
@@ -88,6 +90,7 @@ const EditVenue = () => {
   
     try {
       await putData(`${apiURL}${holidazeVenues}/${id}`, editVenue);
+      window.location.href = `/admin/venues/${profileName}`
     } catch (error) {
       console.error("Edit venue failed: ", error);
     }
