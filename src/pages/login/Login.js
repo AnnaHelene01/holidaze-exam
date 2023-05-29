@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Section } from '../../components/styledComponents/mainStyles';
 import LoginForm from './components/LoginForm';
 import { Col } from 'react-bootstrap';
 
 const Login = () => {
-
+  useEffect(() => {
+    document.title = 'Holidaze - Login';
+  }, []);
 
   return (
     <>

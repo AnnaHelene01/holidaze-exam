@@ -9,6 +9,10 @@ import Loader from '../../../components/Loader'
 
 
 const Venues = () => {
+  useEffect(() => {
+    document.title = 'Holidaze/Admin/Venues';
+  }, []);
+
   const [adminVisible] = useState(false);
   const { name } = useParams();
   const accessToken = JSON.parse(localStorage.getItem("accessToken"));

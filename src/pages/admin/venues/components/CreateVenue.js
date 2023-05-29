@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../overview/admin.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import './venues.css'
@@ -15,6 +15,9 @@ import useMethod from '../../../../hooks/useMethod';
 
 
 const CreateVenue = () => {
+    useEffect(() => {
+        document.title = 'Holidaze/Admin/CreateVenue';
+      }, []);
   const [adminVisible] = useState(false);
   const [numMediaInputs, setNumMediaInputs] = useState(1);
   const [media, setMedia] = useState([]); // Add media state

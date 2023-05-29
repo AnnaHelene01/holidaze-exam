@@ -9,11 +9,15 @@ import TodoList from './components/ToDo-List/TodoList';
 import { Link } from 'react-router-dom';
 
 const Admin = () => {
+  useEffect(() => {
+    document.title = 'Holidaze/Admin';
+  }, []);
   const [adminVisible] = useState(false);
   const accessToken = JSON.parse(localStorage.getItem("accessToken"));
   const profileName = JSON.parse(localStorage.getItem("username"));
   const { setVenues, venues } = useContext(VenuesContext);
   const { setBookings, bookings } = useContext(BookingsContext);
+  const [totalBookings, setTotalBookings] = useState(0);
 
   useEffect(() => {
     async function getLengthVenues() {
@@ -26,11 +30,18 @@ const Admin = () => {
             },
           };
           const response = await fetch(
-            `${apiURL}${holidazeProfiles}/${profileName}/venues`,
+            `${apiURL}${holidazeProfiles}/${profileName}/venues?_bookings=true`,
             options
           );
           const data = await response.json(); // Extract JSON data
           setVenues(data);
+          let total = 0;
+          data.forEach((venue) => {
+            total += venue.bookings.length;
+          });
+
+          setTotalBookings(total);
+
         } catch (error) {
           console.error(error);
         }
@@ -38,31 +49,6 @@ const Admin = () => {
 
       getLengthVenues();
     }, []);
-  
-    useEffect(() => {
-        async function getLengthBookings() {
-            try {   
-              const options = {
-                method: "GET",
-                headers: {
-                  "Content-Type": "application/json",
-                  Authorization: `Bearer ${accessToken}`,
-                },
-              };
-              const response = await fetch(
-                `${apiURL}${holidazeProfiles}/${profileName}/bookings`,
-                options
-              );
-              const data = await response.json(); // Extract JSON data
-              setBookings(data);
-            } catch (error) {
-              console.error(error);
-            }
-          }
-    
-          getLengthBookings();
-        }, []);
-      
   
   return (
     <>
@@ -83,7 +69,7 @@ const Admin = () => {
                         <Card.Body>
                             <Card.Title>Total bookings</Card.Title>
                             <div className='d-flex'>
-                                <h2 className='admin-card'>{bookings.length}</h2>
+                                <h2 className='admin-card'>{totalBookings}</h2>
                                 <img src={admin} className='bookings-img'></img>    
                             </div>
                         </Card.Body>

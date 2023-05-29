@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './register.css'
 import { Container, Section } from '../../components/styledComponents/mainStyles';
 import { Col, Row } from 'react-bootstrap';
@@ -8,7 +8,9 @@ import RegisterForm from './components/RegisterForm';
 
 
 const Register = () => {
-
+  useEffect(() => {
+    document.title = 'Holidaze - Register';
+  }, []);
 
   return (
     <>

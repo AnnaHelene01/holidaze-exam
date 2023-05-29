@@ -11,6 +11,10 @@ import { Button } from '../../../components/styledComponents/mainStyles';
 import  Loader  from '../../../components/Loader';
 
 const Bookings = () => {
+  useEffect(() => {
+    document.title = 'Holidaze/Admin/Bookings';
+  }, []);
+
   const [adminVisible] = useState(false);
   const { name } = useParams();
   const accessToken = JSON.parse(localStorage.getItem('accessToken'));
@@ -34,7 +38,6 @@ const Bookings = () => {
       const response = await fetch(`${apiURL}${holidazeProfiles}/${profileName}/venues?_bookings=true`, options);
       const data = await response.json();
       setBookings(data);
-
       // Fetch customer data for each booking
       const bookingsWithCustomers = await Promise.all(
         data.map(async (venue) => {
@@ -71,7 +74,6 @@ const Bookings = () => {
       
       setBookings(bookingsWithCustomers);
       setLoading(false); // Set loading state to false when data fetching is complete
-
     } catch (error) {
       console.error(error);
     }

@@ -17,6 +17,9 @@ import useApiPut from '../../../../hooks/useApiPut';
 import EditMedia from './components/EditMedia';
 
 const EditVenue = () => {
+  useEffect(() => {
+    document.title = 'Holidaze/Admin/EditVenue';
+  }, []);
     const [adminVisible] = useState(false);
     const { id } = useParams();
     const { dataValues, isError } = useApi(`${apiURL}${holidazeVenues}/${id}`);

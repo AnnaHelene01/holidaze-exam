@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Avatar from '../admin/Profile/components/Avatar';
 import Tab from 'react-bootstrap/Tab';
@@ -8,6 +8,10 @@ import PFavorites from '../admin/Profile/components/PFavorites';
 
 
 const UserProfile = () => {
+    useEffect(() => {
+        document.title = 'Holidaze - Profile';
+      }, []);
+    
    //Get user from localStorage
    //Parse the since it is a string
    const userName = JSON.parse(localStorage.getItem('username'));

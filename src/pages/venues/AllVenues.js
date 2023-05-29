@@ -16,6 +16,10 @@ import Loader from '../../components/Loader';
 import { MdOutlineEmojiFoodBeverage, MdPets } from 'react-icons/md';
 
 const AllVenues = () => {
+  useEffect(() => {
+    document.title = 'Holidaze - Venues';
+  }, []);
+
   const { dataValues, isLoading, isError } = useApi(apiURL + holidazeVenues + '?_owner=true');
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);

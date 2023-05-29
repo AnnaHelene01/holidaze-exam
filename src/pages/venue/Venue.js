@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './venue.css'
 import Media from './components/Media'
 import useApi from '../../hooks/useApi';
@@ -15,6 +15,9 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
 const Venue = () => {
+  useEffect(() => {
+    document.title = 'Holidaze - Venue';
+  }, []);
 
   const { venueId } = useParams()
   const { dataValues, isLoading, isError } = useApi(apiURL + holidazeVenues + "/" + venueId + "?_owner=true" + "&_bookings=true");

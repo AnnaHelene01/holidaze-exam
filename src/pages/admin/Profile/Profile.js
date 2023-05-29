@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../overview/admin.css';
 import './profile.css'
 import { Container, Row } from 'react-bootstrap';
@@ -11,6 +11,9 @@ import { useParams } from 'react-router-dom';
 
 
 const Profile = () => {
+    useEffect(() => {
+        document.title = 'Holidaze/Admin/Profile';
+      }, []);
   const [adminVisible, showAdmin] = useState(false);
   const { name } = useParams();
 
