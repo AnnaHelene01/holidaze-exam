@@ -58,7 +58,7 @@ const PBookings = () => {
                                 <div className='d-flex align-items-center'>
                                 <img
                                     src='https://mdbootstrap.com/img/new/avatars/8.jpg'
-                                    alt=''
+                                    alt='avatar'
                                     style={{ width: '45px', height: '45px' }}
                                     className='rounded-circle'
                                 />

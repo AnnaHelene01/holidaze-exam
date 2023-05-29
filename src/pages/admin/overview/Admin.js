@@ -70,7 +70,7 @@ const Admin = () => {
                             <Card.Title>Total bookings</Card.Title>
                             <div className='d-flex'>
                                 <h2 className='admin-card'>{totalBookings}</h2>
-                                <img src={admin} className='bookings-img'></img>    
+                                <img src={admin} alt="diagram" className='bookings-img'></img>    
                             </div>
                         </Card.Body>
                     </Card>   
@@ -83,7 +83,7 @@ const Admin = () => {
                             <Card.Title>Venues available</Card.Title>
                             <div className='d-flex'>
                                 <h2 className='admin-card'>{venues?.length}</h2>
-                                <img src={admin} className='bookings-img'></img>    
+                                <img src={admin} alt="diagram" className='bookings-img'></img>    
                             </div>
                         </Card.Body>
                     </Card>   
@@ -95,7 +95,7 @@ const Admin = () => {
                             <Card.Title>Expired venues</Card.Title>
                             <div className='d-flex'>
                                 <h2 className='admin-card'>4,366</h2>
-                                <img src={admin} className='bookings-img'></img>    
+                                <img src={admin} alt="diagram" className='bookings-img'></img>    
                             </div>
                         </Card.Body>
                     </Card>                 

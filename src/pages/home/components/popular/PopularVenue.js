@@ -26,7 +26,7 @@ const PopularVenue= ({ venueId, index }) => {
     <>
         <div key={dataValues.id} data-aos="fade-up" className="singleDestination">
             <div className="destImage">
-                 <img src={dataValues.media} alt="" />
+                 <img src={dataValues.media} alt={dataValues.name} />
                 <div className="overlayInfo">
                     <h3> {dataValues?.name} </h3>
                     <p> {dataValues?.location?.country} </p>

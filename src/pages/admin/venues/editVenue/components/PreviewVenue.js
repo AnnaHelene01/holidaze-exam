@@ -10,6 +10,7 @@ const PreviewVenue = ({  name, description, price, media, maxGuests, address}) =
             <Card.Img 
             variant='top'
             src={media}
+            alt={description}
             style={{ height: "180px", objectFit: "cover" }}
             onError={(e) => {
               e.target.src = placeholderImg;

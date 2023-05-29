@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Avatar from '../admin/Profile/components/Avatar';
 import Tab from 'react-bootstrap/Tab';

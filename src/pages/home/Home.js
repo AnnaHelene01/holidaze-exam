@@ -7,6 +7,9 @@ import Featured from './components/featured/Featured';
 import Popular from './components/popular/Popular';
 
 const Home = () => {
+  useEffect(() => {
+    document.title = 'Holidaze';
+  }, []);
 
     // Filter states
     const [location, setLocation] = useState('');

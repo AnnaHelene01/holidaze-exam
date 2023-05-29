@@ -16,7 +16,7 @@ const FeaturedVenue = ({ venueId }) => {
     <>
         <div data-aos="fade-up" data-aos-duration="3000" className="singleOffer">
             <div className="destImage">
-              <img src={dataValues?.media?.[0]} alt='alt' />
+              <img src={dataValues?.media?.[0]} alt={dataValues.name} />
 
              <span className="discount">
               30% Off

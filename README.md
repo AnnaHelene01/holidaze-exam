@@ -28,7 +28,7 @@ $ npm start
 &nbsp;
 
 ### Gant Chart
-<img width="1428" alt="Skjermbilde 2022-11-21 kl  15 54 15" src="https://github.com/AnnaHelene01/holidaze-exam/blob/main/planning/Gant.png?raw=true">
+<img width="842" alt="Skjermbilde 2022-11-21 kl  15 54 15" src="https://github.com/AnnaHelene01/holidaze-exam/blob/main/planning/Gant.png?raw=true">
 
 &nbsp;
 

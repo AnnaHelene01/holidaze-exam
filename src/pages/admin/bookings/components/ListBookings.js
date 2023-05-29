@@ -1,4 +1,3 @@
-import { MDBBtn } from 'mdb-react-ui-kit';
 import React from 'react';
 
 const ListBookings = ({ bookings, selectedVenue }) => {
@@ -18,7 +17,7 @@ const ListBookings = ({ bookings, selectedVenue }) => {
               <div className='d-flex align-items-center'>
                 <img
                   src={booking.customer && booking.customer.avatar && booking.customer.avatar.startsWith('http') ? booking.customer.avatar : placeholderAvatar}
-                  alt=''
+                  alt={booking.customer.name}
                   style={{ width: '45px', height: '45px' }}
                   className='rounded-circle'
                 />
