@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './home.css'
 import { Button, Container } from '../../components/styledComponents/mainStyles';
 import { Link } from 'react-router-dom';
