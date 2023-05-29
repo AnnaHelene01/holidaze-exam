@@ -46,6 +46,7 @@ The project involved developing a brand new front-end application for Holidaze, 
 
 The website was built using React as the primary framework, along with styled components, React Bootstrap, and vanilla CSS to achieve a visually appealing and user-friendly interfaxe. Redux was implementet for efficient state to allow users to add venues to their favorite, and come back to their profile to easily access the venue again.
 All the required features, including user stories such as viewing venues, searching for specific venues, creating, editing and deleting venues, creating bookings, were successfully implementet and fully functional on the website. 
+
 In addition to the requirements, extra functionality was incorporated to enchance the user experience. Notably, users favorites was created to provide users with and interactive and visually rich experience while browsing and looking for venues. Implementing filtering search and a filter modal on the site was added to improve enhanced user experienve, improced relevance and also for the visual appeal and to improve the streamlined navigation. 
 
 #### Goal
