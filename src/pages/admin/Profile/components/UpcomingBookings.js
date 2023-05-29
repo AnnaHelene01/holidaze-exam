@@ -49,7 +49,7 @@ const UpcomingBookings = () => {
               };
               const response = await fetch(url, options);
               if (response.status === 204) {
-                window.location = `/admin/profile/${profileName}`;
+                window.location = `/`;
               }
             } catch (error) {
               console.warn(error);
