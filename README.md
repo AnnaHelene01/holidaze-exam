@@ -18,6 +18,7 @@ $ npm install
 $ npm start
 $ npm run build
 ```
+#### Note that you have to use @stud.noroff.no or @noroff.no when registering a user on the site!
 
 &nbsp;
 
