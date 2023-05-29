@@ -22,7 +22,6 @@ function useApiPost() {
         const json = await response.json();
         setData(json);
       } catch (error) {
-        console.log(error);
         setIsError(true);
         setData(null);
         throw error;
