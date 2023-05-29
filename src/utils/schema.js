@@ -102,8 +102,6 @@ export const createVenueSchema = yup
       city: yup.string(),
       zip: yup.string(),
       country: yup.string(),
-      lat: yup.number(),
-      lng: yup.number(),
     }),
 });
 
@@ -137,7 +135,5 @@ export const editSchema = yup
     city: yup.string(),
     zip: yup.string(),
     country: yup.string(),
-    lat: yup.number(),
-    lng: yup.number(),
   }),
 })

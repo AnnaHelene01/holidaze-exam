@@ -34,8 +34,6 @@ const CreateVenue = () => {
         city: "",
         zip: "",
         country: "",
-        lat: 0,
-        lng: 0,
     });
 
     // toggle function for each button
@@ -101,9 +99,7 @@ async function onFormSubmit(addVenue) {
     addVenue.location.address ||
     addVenue.location.city ||
     addVenue.location.zip ||
-    addVenue.location.country ||
-    addVenue.location.lat ||
-    addVenue.location.lng
+    addVenue.location.country 
   ) {
     setLocation(addVenue.location);
   }
@@ -248,19 +244,6 @@ async function onFormSubmit(addVenue) {
                         <span>{errors.location?.country?.message}</span>
                     </Col>
                     </Row>
-                    <Row className='mt-4'>
-                    <Col sm="12" md="6" className='mb-4'>
-                        <h5>LAT</h5>
-                        <Form.Control type="number" step="0.000001" name="location.lat" {...register('location.lat')}/>
-                        <span>{errors.location?.lat?.message}</span>
-                    </Col>
-                    <Col sm="12" md="6" className='mb-4'>
-                        <h5>LNG</h5>
-                        <Form.Control type="number" step="0.000001" name="location.lng" {...register('location.lng')}/>
-                        <span>{errors.location?.lng?.message}</span>
-                    </Col>
-            </Row>
-
             <Button type="submit">
                 CREATE VENUE
             </Button>
